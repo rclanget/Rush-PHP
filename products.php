@@ -52,6 +52,6 @@
 			</div>
 		</div>
 	</section>
-	<?php incude('footer.php'); ?>
+	<?php include('footer.php'); ?>
 </body>
 </html>

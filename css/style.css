@@ -312,6 +312,7 @@ footer {
 	background-color: black;
 	color: white;
 	text-align: center;
+	margin-top: 100px;
 }
 
 /* Products */
@@ -687,5 +688,138 @@ footer {
 	cursor: pointer;
 	color: white;
 	transition: 1s;
-
 }
+
+
+.pannier_details__content___title {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+	border-bottom: 5px solid red;
+}
+
+.pannier_details__content___table {
+	width: 70%;
+	margin: auto;
+	border-bottom: 5px solid red;
+	padding-bottom: 50px;
+}
+
+.pannier_details__content___table table {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.pannier_details__content___table table tr {
+	border: 1px solid black;
+	margin-bottom: 10px;
+	line-height: 50px;
+}
+
+.pannier_details__content___table____btnvalid {
+	display: block;
+	float: right;
+	margin-right: 30px;
+	height: 40px;
+	width: 100px;
+	border: 1px solid red;
+	background-color: white;
+	outline: none;
+	transition: 0.5s;
+}
+
+.pannier_details__content___table____btnvalid:hover {
+	background-color: rgba(255,0,0,0.7);
+	transition: 1s;
+	cursor: pointer;
+	color: white;
+}
+
+.pannier_details__content___table____btnvalid:active {
+	background-color: rgba(255,0,0,1);
+	color: white;
+}
+
+.pannier_details__content___table____btnsuppr {
+	width: 40px;
+	height: 20px;
+	background-color: red;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.pannier_details__content___title ul {
+	list-style:  none;
+	margin-top: 20px;
+}
+
+.pannier_details__content___title ul a{
+	color: black;
+}
+
+.pannier_details__content___title ul li {
+	display: inline-block;
+	line-height: 20px;
+	padding: 10px;
+}
+
+.onglet_act {
+	background-color: red;
+	color: white;
+}
+
+/* Admin */
+
+.admin_details__header {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.admin_details__content___table____btnadmin {
+	width: 40px;
+	height: 20px;
+	background-color: black;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.admin_details__content___table____btnmodif {
+	padding: 5px;
+	font-size: 15px;
+	background-color: #cccccc;
+	border: none;
+	color: black;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
