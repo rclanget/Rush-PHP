@@ -659,11 +659,10 @@ footer {
 
 }
 
-.inscription_details__content___form_f input, label, button {
+.inscription_details__content___form_f input, label {
 	width: 99%;
 	height: 25px;
 }
-
 
 .inscription_details__content___form_f label {
 	margin-bottom: 5px;
@@ -671,4 +670,22 @@ footer {
 
 .inscription_details__content___form_f input {
 	margin-bottom: 10px;
+}
+
+.inscription_details__content___form_f button {
+	width: 100%;
+	height: 35px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background-color: #999;
+	border: none;
+	font-size: 17px;
+}
+
+.inscription_details__content___form_f button:hover {
+	background-color: #333;
+	cursor: pointer;
+	color: white;
+	transition: 1s;
+
 }

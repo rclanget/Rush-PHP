@@ -14,26 +14,17 @@
 		<div class="products_details">
 			<div class="products_details__content">
 				<div class="inscription_details__content___title">
-					<h1>Inscription</h1>
+					<h1>Connection</h1>
 				</div>
 				<div class="inscription_details__content___form">
 					<form method="post" action="#" class="inscription_details__content___form_f">
-						<label>Nom</label>
-						<input type="text" required>
-
-						<label>Prenom</label>
-						<input type="text" required>
-
 						<label>E-Mail</label>
 						<input type="email" required>
 
 						<label>Mot de passe</label>
 						<input type="password" required>
 
-						<label>Confirmation du mot de passe</label>
-						<input type="password" required>
-
-						<button>Valider</button>
+						<button>Connexion</button>
 					</form>
 				</div>
 			</div>

@@ -14,7 +14,7 @@
 		<div class="products_details">
 			<div class="products_details__content">
 				<div class="inscription_details__content___title">
-					<h1>Inscription</h1>
+					<h1>Modification</h1>
 				</div>
 				<div class="inscription_details__content___form">
 					<form method="post" action="#" class="inscription_details__content___form_f">
@@ -33,7 +33,7 @@
 						<label>Confirmation du mot de passe</label>
 						<input type="password" required>
 
-						<button>Valider</button>
+						<button>Valider les modifications</button>
 					</form>
 				</div>
 			</div>
