@@ -28,17 +28,18 @@
 				</div>
 				<div class="products_details__content___aside">
 					<div class="products_details__content___aside____price">
-						<p>9.99</p>
+						<p>€ 9.99</p>
 					</div>
 					<div class="products_details__content___aside____add">
 						<a href="#">ADD TO PANIER</a>
 					</div>
 					<div class="products_details__content___aside____categorie">
+						<h3>Categories</h3>
 						<ul>
-							<li>#1 cat</li>
-							<li>#2 cat</li>
-							<li>#3 cat</li>
-							<li>#4 cat</li>
+							<a href=""><li>#1 cat</li></a>
+							<a href=""><li>#2 cat</li></a>
+							<a href=""><li>#3 cat</li></a>
+							<a href=""><li>#4 cat</li></a>
 						</ul>
 					</div>
 				</div>

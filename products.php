@@ -29,11 +29,13 @@
 				<section class="results_products__group">
 					<h3>Burger</h3>
 					<article class="results_products__group___elem">
+						<a href="details.php">
 						<img src="http://themes.goodlayers2.com/delicieux/wp-content/uploads/2012/11/3168342551_1bdce9613a_b.jpg">
 						<div class="results_products__group___elem____infos">
 							<h4>Title</h4>
 							<p>5 tiger shrimps, garlic, butter, lemon, herbs, 5 tiger shrimps, garlic, butter, lemon, herbs</p>
 						</div>
+						</a>
 						<div class="results_products__group___elem____price">
 							<p>9.95</p>
 							<div class="results_products__group___elem____price____options">

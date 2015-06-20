@@ -1,10 +1,10 @@
 	<header>
 		<nav>
 			<div class="header_nav_logo">
-				<a href="#" class="header_nav_logo_a"><img src="http://188.226.173.21/takeaway/img/header-logo.png" class="header_nav_logo_a_img"></a>
+				<a href="index.php" class="header_nav_logo_a"><img src="http://188.226.173.21/takeaway/img/header-logo.png" class="header_nav_logo_a_img"></a>
 			</div>
 			<ul class="header_nav_menu">
-				<a href="#"><li>Produits</li></a>
+				<a href="products.php"><li>Produits</li></a>
 				<a href="#"><li>Menus</li></a>
 				<a href="#"><li>Mon compte</li></a>
 			</ul>

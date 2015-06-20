@@ -386,6 +386,10 @@ footer {
 	margin-bottom: 5px;
 }
 
+.results_products__group___elem a {
+	color: black;
+}
+
 .results_products__group___elem:hover {
 	border-color: red;
 	cursor: pointer;
@@ -450,6 +454,7 @@ footer {
 }
 .results_products__group___elem____price____options a{
 	font-size: 20px;
+	color: white;
 }
 
 .results_products__group___elem____add a{
@@ -523,11 +528,147 @@ footer {
 }
 
 .products_details__content___title {
-	width: 65%;
+	width: 100%;
+	border-bottom: 5px solid red;
+}
+
+.products_details__content___center {
+	display: inline-block;
+	width: 70%;
+	margin-top: 25px;
+}
+
+.products_details__content___description {
+	width: 100%;
+}
+
+.products_details__content___description p {
+	width: 100%;
+}
+
+.products_details__content___aside {
+	vertical-align: top;
+	margin-top: 25px;
+	display: inline-block;
+	width: 29%;
+	min-height: 250px;
+	background-color: #cccccc;
+}
+
+.products_details__content___aside____price {
+	width: 100%;
+	height: 25px;
+	text-align: center;
+}
+
+.products_details__content___aside____price p {
+	width: 100%;
+	line-height: 70px;
+	font-size: 40px;
+	color: black;
+}
+
+
+.products_details__content___aside____price p:after {
+	content: " ";
+	width: 70%;
+	display: block;
+	margin: auto;
+	border-bottom: 1px solid #666;
+}
+
+.products_details__content___aside____add {
+	display: block;
+	width: 100%;
+	text-align: center;
+	line-height: 70px;
+}
+
+.products_details__content___aside____add a {
+	color: red;
+}
+
+.products_details__content___aside____add:hover a {
+	color: rgba(255,0,0,0.6);
+}
+
+.products_details__content___aside____add a:after {
+	content: " ";
+	width: 70%;
+	display: block;
+	margin: auto;
+	border-bottom: 1px solid #666;
+}
+
+.products_details__content___aside____categorie {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.products_details__content___aside____categorie h3 {
+	line-height: 50px;
+}
+
+.products_details__content___aside____categorie ul {
+	list-style: none;
+	text-align: left;
+	margin-left: 125px;
+}
+
+.products_details__content___aside____categorie ul li {
+	line-height: 25px;
+}
+
+.products_details__content___aside____categorie a {
+	color: black;
+}
+
+.products_details__content___aside____categorie a:hover {
+	color: #999999;
+}
+
+/* Inscription */
+
+
+.inscription_details__header {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
+.inscription_details__content___title {
+	width: 40%;
+	margin: auto;
+	text-align: center;
+	border-bottom: 5px solid red;
+}
+
+.inscription_details__content___form {
+	width: 40%;
+	margin: auto;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	border-bottom: 5px solid red;
 
 }
 
+.inscription_details__content___form_f input, label, button {
+	width: 99%;
+	height: 25px;
+}
 
 
+.inscription_details__content___form_f label {
+	margin-bottom: 5px;
+}
 
+.inscription_details__content___form_f input {
+	margin-bottom: 10px;
+}
