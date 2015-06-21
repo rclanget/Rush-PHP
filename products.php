@@ -64,7 +64,7 @@
 								</div>
 								</a>
 								<div class="results_products__group___elem____price">
-									<p><?php echo $article[3] ?> €</p>
+									<p><?php echo $article[3] ?>    .€</p>
 									<div class="results_products__group___elem____price____options">
 										<a href="#">Options</a>
 									</div>
@@ -107,7 +107,7 @@
 								</div>
 								</a>
 								<div class="results_products__group___elem____price">
-									<p><?php echo $article[3] ?> €</p>
+									<p><?php echo $article[3] ?>    €</p>
 									<div class="results_products__group___elem____price____options">
 										<a href="#">Options</a>
 									</div>

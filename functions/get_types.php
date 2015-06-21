@@ -44,4 +44,12 @@ function get_type_by_art($id)
 	//2 = type 3
 	return($lst);
 }
+
+function add_type($idart, $idtyp)
+{
+	include("bdd.php");
+	$bdd->exec("INSERT INTO `sand-type` (idSand, idType) VALUES ('".$idart."', '".$idtyp."')");
+	return("succes");
+}
+
 ?>

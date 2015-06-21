@@ -54,6 +54,16 @@
 				</div>
 			</div>
 		</div>
+		<?php
+			if ($_SESSION['admin'])
+			{
+		?>
+		<div class="center_link">
+			<a href="admin.php" class="administration_link">Administration</a>
+		</div>
+		<?php
+			}
+		?>
 	</div>
 	<?php include('footer.php'); ?>
 </body>

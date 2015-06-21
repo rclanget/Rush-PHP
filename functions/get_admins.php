@@ -18,4 +18,14 @@ function get_admins()
 	//6 = solde
 	return($tab);
 }
+
+function go_admin($id, $admin)
+{
+	include("bdd.php");
+	if ($admin)
+		$bdd->exec("UPDATE USER SET admin=0 WHERE id='".$id."'");
+	else
+		$bdd->exec("UPDATE USER SET admin=1 WHERE id='".$id."'");
+	return($tab);
+}
 ?>

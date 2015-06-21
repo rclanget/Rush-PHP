@@ -2,13 +2,20 @@
 	include('base.php');
 	include('functions/get_user.php');
 	include('functions/get_users.php');
+	include('functions/del_user.php');
+	include('functions/get_admins.php');
 	if ($_SESSION['admin'] != 1)
 		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');	
-	// if ($_GET['d'])
-	// {
-	// 	del_art($_GET['d']);
-	// 	header('Location: admin.php');
-	// }
+	if ($_GET['d'])
+	{
+		del_user($_GET['d']);
+		header('Location: admin_members.php');
+	}
+	if ($_GET['a'])
+	{
+		go_admin($_GET['a'], $_GET['bol']);
+		header('Location: admin_members.php');
+	}
 ?>
 <!doctype html>
 <html lang="fr"> 
@@ -52,8 +59,8 @@
 							<td><?php echo $user[2]; ?></td>
 							<td><?php echo $user[3]; ?></td>
 							<td><?php echo $user[4]; ?></td>
-							<td><button class="admin_details__content___table____btnadmin" style="<?php if ($user[1]) { echo "background-color: green;";} ?>"><?php echo $user[1]; ?></button></td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
+							<td><a href="admin_members.php?a=<?php echo $user[0]; ?>&bol=<?php echo $user[1]; ?>"><button class="admin_details__content___table____btnadmin" style="<?php if ($user[1]) { echo "background-color: green;";} ?>"><?php echo $user[1]; ?></button></a></td>
+							<td><a href="admin_members.php?d=<?php echo $user[0]; ?>"><button class="pannier_details__content___table____btnsuppr">X</button></a></td>
 						</tr>
 						<?php
 							}

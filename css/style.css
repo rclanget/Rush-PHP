@@ -670,7 +670,11 @@ footer {
 
 }
 
-.inscription_details__content___form_f input, label {
+.inscription_details__content___form h4 {
+	line-height: 70px;
+}
+
+.inscription_details__content___form_f input, label, textarea, select{
 	width: 99%;
 	height: 25px;
 }
@@ -679,7 +683,14 @@ footer {
 	margin-bottom: 5px;
 }
 
-.inscription_details__content___form_f input {
+.inscription_details__content___form_f input, select {
+	margin-bottom: 10px;
+}
+
+.inscription_details__content___form_f textarea {
+	height: 70px;
+	max-height: 70px;
+	max-width: 99%;
 	margin-bottom: 10px;
 }
 
@@ -844,7 +855,24 @@ footer {
 	background: rgba(0,255,0,0.5);
 }
 
+.center_link {
+	width: 200px;
+	margin: auto;
+	text-align: center;
+}
 
+.administration_link {
+	color: black;
+	line-height: 100px;
+	text-align: center;
+	width: 100px;
+	margin: auto;
+
+}
+
+.administration_link:hover {
+	color: red;
+}
 
 
 

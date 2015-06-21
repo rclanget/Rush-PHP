@@ -5,12 +5,28 @@
 	include('functions/get_art.php');
 	include('functions/get_arts.php');
 	include('functions/del_cmd.php');
+	include('functions/get_types.php');
+	include('functions/add_art.php');
 	if ($_SESSION['admin'] != 1)
 		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');
 	if ($_GET['d'])
 	{
 		del_art($_GET['d']);
 		header('Location: admin.php');
+	}
+	if ($_POST)
+	{	
+		$tab[] = $_POST['titre'];
+		$tab[] = $_POST['description'];
+		$tab[] = $_POST['prix'];
+		$tab[] = $_POST['url'];
+		if ($_POST['categorie1'])
+			$tab[] = $_POST['categorie1'];
+		if ($_POST['categorie2'])
+			$tab[] = $_POST['categorie2'];
+		if ($_POST['categorie3'])
+			$tab[] = $_POST['categorie3'];
+		add_art($tab);
 	}
 ?>
 <!doctype html>
@@ -60,7 +76,62 @@
 							}
 						?>
 					</table>
-					<button class="pannier_details__content___table____btnvalid">Ajouter un produit</button>
+				</div>
+				<div class="inscription_details__content___form">
+					<h4>Ajout d'un article</h4>
+					<form method="post" action="admin.php" class="inscription_details__content___form_f">
+						<label>Titre</label>
+						<input name="titre" type="text" required>
+
+						<label>Description</label>
+						<textarea name="description" required></textarea>
+
+						<label>Prix</label>
+						<input name="prix" type="text" required>
+
+						<label>URL image</label>
+						<input name="url" type="text" required>
+
+						<label>Categories</label>
+						<select name="categorie1">
+							<option value="0">-</option>
+						<?php
+							$categories = get_type();
+							foreach ($categories as $categorie)
+							{
+						?>
+							<option value="<?php echo $categorie[0]; ?>"><?php echo $categorie[1]; ?></option>
+						<?php
+							}
+						?>
+						</select>
+						<select name="categorie2">
+							<option value="0">-</option>
+						<?php
+							
+							foreach ($categories as $categorie)
+							{
+						?>
+							<option value="<?php echo $categorie[0]; ?>"><?php echo $categorie[1]; ?></option>
+						<?php
+							}
+						?>
+						</select>
+						<select name="categorie3">
+							<option value="0">-</option>
+						<?php
+							
+							foreach ($categories as $categorie)
+							{
+						?>
+							<option value="<?php echo $categorie[0]; ?>"><?php echo $categorie[1]; ?></option>
+						<?php
+							}
+						?>
+						</select>
+
+						<button type="submit">Valider</button>
+					</form>
 				</div>
 			</div>
 		</div>
