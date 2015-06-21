@@ -1,3 +1,8 @@
+<?php
+	include('base.php');
+	if (!isset($_GET))
+		header("location: index.php?error=Page non trouvée.");
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -7,28 +12,27 @@
 	<script src="script.js"></script>
 </head>
 <body>
-	<?php include('header.php'); ?>
-	<div class="products_details__header" style="background-image: url(http://themes.goodlayers2.com/delicieux/wp-content/uploads/2012/11/3168342551_1bdce9613a_b.jpg)">
+	<?php 
+	include('functions/get_art.php');
+	$details = get_art($_GET['p']);
+	include('header.php'); 
+	?>
+	<div class="products_details__header" style="background-image: url(<?php echo $details[4]; ?>)">
 	</div>
 	<div class="center">
 		<div class="products_details">
 			<div class="products_details__content">
 				<div class="products_details__content___title">
-					<h1>Title</h1>
+					<h1><?php echo $details[1]; ?></h1>
 				</div>
 				<div class="products_details__content___center">
 					<div class="products_details__content___description">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p><?php echo $details[2]; ?></p>
 					</div>
 				</div>
 				<div class="products_details__content___aside">
 					<div class="products_details__content___aside____price">
-						<p>€ 9.99</p>
+						<p>€ <?php echo $details[3]; ?></p>
 					</div>
 					<div class="products_details__content___aside____add">
 						<a href="#">ADD TO PANIER</a>

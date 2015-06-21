@@ -1,3 +1,8 @@
+<?php
+	include('base.php');
+	if ($_SESSION['admin'] != 1)
+		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');
+?>
 <!doctype html>
 <html lang="fr">
 <head>

@@ -1,3 +1,6 @@
+<?php
+	include('base.php');
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -6,7 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="script.js"></script>
 </head>
-<body>
+<body> 
 	<?php include('header.php'); ?>
 	<div class="inscription_details__header" style="background-image: url(http://themes.goodlayers2.com/delicieux/wp-content/uploads/2012/11/3168342551_1bdce9613a_b.jpg)">
 	</div>
@@ -17,23 +20,23 @@
 					<h1>Inscription</h1>
 				</div>
 				<div class="inscription_details__content___form">
-					<form method="post" action="#" class="inscription_details__content___form_f">
+					<form method="post" action="give_inscription.php" class="inscription_details__content___form_f">
 						<label>Nom</label>
-						<input type="text" required>
+						<input name="nom" type="text" required>
 
 						<label>Prenom</label>
-						<input type="text" required>
+						<input name="prenom" type="text" required>
 
-						<label>E-Mail</label>
-						<input type="email" required>
+						<label>Pseudo</label>
+						<input name="pseudo" type="text" required>
 
 						<label>Mot de passe</label>
-						<input type="password" required>
+						<input name="passwd" type="password" required>
 
 						<label>Confirmation du mot de passe</label>
 						<input type="password" required>
 
-						<button>Valider</button>
+						<button type="submit">Valider</button>
 					</form>
 				</div>
 			</div>

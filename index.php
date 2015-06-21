@@ -1,3 +1,7 @@
+<?php
+	include('base.php');
+	include('functions/get_arts.php');
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -68,71 +72,40 @@
 			</div>
 		</div>
 	</section>
+	<?php 
+		if (get_arts() != NULL)
+		{
+	?>
 	<section class="last_products">
 		<div class="center">
 			<h3>Derniers produits ajoutés</h3>
+			<?php
+			$tab_lastadd = get_arts();
+			$j = 0;
+			foreach ($tab_lastadd as $article) {
+				if ($j++ > 5)
+					break;
+			?>
+			<a href="details.php?p=<?php echo $article[0]; ?>">
 			<article class="last_products__elem">
 				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
+					<img src="<?php echo $article[4]; ?>">
 				</div>
 				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
+					<h4><?php echo $article[1]; ?></h4>
+					<p><?php echo $article[2]; ?></p>
 					<button class="btn_ajout_pannier">Ajouter au panier</button>
 				</div>
 			</article>
-			<article class="last_products__elem">
-				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
-				</div>
-				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
-					<button class="btn_ajout_pannier">Ajouter au panier</button>
-				</div>
-			</article>
-			<article class="last_products__elem">
-				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
-				</div>
-				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
-					<button class="btn_ajout_pannier">Ajouter au panier</button>
-				</div>
-			</article>
-			<article class="last_products__elem">
-				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
-				</div>
-				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
-					<button class="btn_ajout_pannier">Ajouter au panier</button>
-				</div>
-			</article>
-			<article class="last_products__elem">
-				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
-				</div>
-				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
-					<button class="btn_ajout_pannier">Ajouter au panier</button>
-				</div>
-			</article>
-			<article class="last_products__elem">
-				<div class="last_products__elem___img">
-					<img src="http://188.226.173.21/takeaway/img/content/menu-list-img.jpg">
-				</div>
-				<div class="last_products__elem___info">
-					<h4>Title product</h4>
-					<p>Description du produits, en détqil si possible.</p>
-					<button class="btn_ajout_pannier">Ajouter au panier</button>
-				</div>
-			</article>
+			</a>
+			<?php
+			}
+			?>
 		</div>
 	</section>
+	<?php
+	}
+	?>
 	<?php include('footer.php'); ?>
 </body>
 </html>

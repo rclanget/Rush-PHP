@@ -1,3 +1,6 @@
+<?php
+	include('base.php');
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -14,17 +17,17 @@
 		<div class="products_details">
 			<div class="products_details__content">
 				<div class="inscription_details__content___title">
-					<h1>Connection</h1>
+					<h1>Connexion</h1>
 				</div>
 				<div class="inscription_details__content___form">
-					<form method="post" action="#" class="inscription_details__content___form_f">
-						<label>E-Mail</label>
-						<input type="email" required>
+					<form method="post" action="login.php" class="inscription_details__content___form_f">
+						<label>Pseudo</label>
+						<input name="pseudo" type="text" required>
 
 						<label>Mot de passe</label>
-						<input type="password" required>
+						<input name="password" type="password" required>
 
-						<button>Connexion</button>
+						<button type="submit">Connexion</button>
 					</form>
 				</div>
 			</div>
