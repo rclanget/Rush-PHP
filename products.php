@@ -2,6 +2,10 @@
 	include('base.php');
 	include('functions/get_arts.php');
 	include('functions/get_types.php');
+	if ($_GET['b'] == 1)
+	{
+		$_SESSION['pannier'][] = $_GET['p'];
+	}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -62,7 +66,7 @@
 								</div>
 								<div class="results_products__group___elem____add">
 									<!-- <div class="results_products__group___elem____add_____confirmbtn"> -->
-										<a href="#">ADD TO PANNIER</a>
+										<a href="products.php?p=<?php echo $article[0]; ?>&b=1">ADD TO PANNIER</a>
 									<!-- </div> -->
 								</div>
 							</article>

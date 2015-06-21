@@ -1,6 +1,13 @@
 <?php
 	include('base.php');
-?>
+	include('functions/get_art.php');
+	if (isset($_GET['d']))
+	{
+		unset($_SESSION['pannier'][$_GET['d']]);
+		$_SESSION['pannier'] = array_values($_SESSION['pannier']);
+		header('Location: pannier.php');
+	}
+?> 
 <!doctype html>
 <html lang="fr">
 <head>
@@ -28,40 +35,40 @@
 							<th>Total</th>
 							<th>Supprimer</th>
 						</tr>
+						<?php
+							foreach ($_SESSION['pannier'] as $key => $value) {
+								$j = 1;
+								$tab = get_art($value);
+						?>
 						<tr>
-							<td>Produit 1</td>
-							<td>9.99</td>
-							<td>2</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
+							<td><?php echo $tab[1]; ?></td>
+							<td><?php echo $tab[3]; ?> €</td>
+							<td>1</td>
+							<td><?php echo $tab[3]; ?> €</td>
+							<td><a href="pannier.php?d=<?php echo $key; ?>"><button class="pannier_details__content___table____btnsuppr">X</button></a></td>
 						</tr>
-						<tr>
-							<td>Produit 1</td>
-							<td>9.99</td>
-							<td>2</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
-						</tr>
-						<tr>
-							<td>Produit 1</td>
-							<td>9.99</td>
-							<td>2</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
-						</tr>
+						<?php
+							$total += $tab[3];
+						}
+						?>
 						<tr>
 							<td></td>
 							<td></td>
 							<td><strong>Total</strong></td>
-							<td><strong>59.94</strong></td>
+							<td><strong><?php echo $total; ?> €</strong></td>
 							<td></td>
 						</tr>
 					</table>
+					<?php 
+						if ($_SESSION['logged'] && ($j == 1))
+						{
+					?>
 					<button class="pannier_details__content___table____btnvalid">Valider</button>
+					<?php
+						}
+					?>
 				</div>
 			</div>
 		</div>
-	</div>
-	<?php include('footer.php'); ?>
-</body>
+	</div></body>
 </html>
