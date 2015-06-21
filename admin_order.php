@@ -1,7 +1,16 @@
 <?php
 	include('base.php');
+	include('functions/get_cmd.php');
+	include('functions/get_user.php');
+	include('functions/get_art.php');
+	include('functions/del_cmd.php');
 	if ($_SESSION['admin'] != 1)
 		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');
+	if ($_GET['d'])
+	{
+		del_cmd($_GET['d']);
+		header('Location: admin_order.php');
+	}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -34,30 +43,19 @@
 							<th>Total</th>
 							<th>Supprimer</th>
 						</tr>
+						<?php 
+							$cmd = get_cmd(); 
+							foreach ($cmd as $value) {
+						?>
 						<tr>
-							<td>Charles J.</td>
-							<td>#C1200</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
+							<td><?php  $user = get_user($value[1]); echo $user[2]; ?></td>
+							<td>#C0<?php $value[0]; ?></td>
+							<td><?php  $art = get_art($value[2]); echo $art[3]; ?></td>
+							<td><a href="admin_order.php?d=<?php echo $value[0]; ?>"><button class="pannier_details__content___table____btnsuppr">X</button></a></td>
 						</tr>
-						<tr>
-							<td>Charles J.</td>
-							<td>#C1200</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
-						</tr>
-						<tr>
-							<td>Charles J.</td>
-							<td>#C1200</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
-						</tr>
-						<tr>
-							<td>Charles J.</td>
-							<td>#C1200</td>
-							<td>19.98</td>
-							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
-						</tr>
+						<?php
+							}
+						?>
 					</table>
 				</div>
 			</div>

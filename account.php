@@ -1,6 +1,21 @@
 <?php
 	include('base.php');
-?>
+	include('functions/get_user.php');
+	include('functions/update_user.php');
+	if ($_POST)
+	{
+		$tab[0] = $_SESSION['logged'];
+		$tab[1] = $_POST['nom'];
+		$tab[2] = $_POST['prenom'];
+		$tab[3] = $_POST['pseudo'];
+		if ($_POST['password'])
+			$tab[4] = $_POST['password'];
+		else
+			$tab[4] = NULL;
+		update_user($tab);
+		header('Location: account.php?success=informations mises à jour.');
+	}
+?> 
 <!doctype html>
 <html lang="fr">
 <head>
@@ -20,23 +35,21 @@
 					<h1>Modification</h1>
 				</div>
 				<div class="inscription_details__content___form">
-					<form method="post" action="#" class="inscription_details__content___form_f">
+					<form method="post" action="account.php" class="inscription_details__content___form_f">
+						<?php $user = get_user($_SESSION['logged']); ?>
 						<label>Nom</label>
-						<input type="text" required>
+						<input type="text" name="nom" value="<?php echo $user[2]; ?>" required>
 
 						<label>Prenom</label>
-						<input type="text" required>
+						<input type="text" name="prenom" value="<?php echo $user[3]; ?>" required>
 
-						<label>E-Mail</label>
-						<input type="email" required>
+						<label>Pseudo</label>
+						<input type="text" name="pseudo" value="<?php echo $user[4]; ?>" required>
 
 						<label>Mot de passe</label>
-						<input type="password" required>
+						<input name="password" type="password">
 
-						<label>Confirmation du mot de passe</label>
-						<input type="password" required>
-
-						<button>Valider les modifications</button>
+						<button type="submit">Valider les modifications</button>
 					</form>
 				</div>
 			</div>

@@ -16,6 +16,19 @@ function get_type()
 	return($tab);
 }
 
+function get_types($id)
+{
+	$i = 0;
+	include("bdd.php");
+	$rep = $bdd->query("SELECT libelle FROM type WHERE id='".$id."'");
+	while($ok = $rep->fetch())
+	{
+		$tab[$i] = $ok;
+		$i++;
+	}
+	return($tab);
+}
+
 function get_type_by_art($id)
 {
 	$i = 0;

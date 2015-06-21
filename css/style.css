@@ -363,15 +363,15 @@ footer {
 	width: 100%;
 }
 
-.filter_products__category input{
-	width: 10%;
-	display: inline-block;
+.filter_products__category a{
+	line-height: 35px;
+	width: 90%;
+	margin-left: 10%;
+	color: rgba(255,0,0,0.6);
 }
 
-.filter_products__category label{
-	line-height: 50px;
-	width: 80%;
-	display: inline-block;
+.filter_products__category a:hover{
+	color: black;
 }
 
 .results_products {
@@ -700,6 +700,15 @@ footer {
 	transition: 1s;
 }
 
+.pannier_count {
+	position: relative;
+	top: 12px;
+	left: 65px;
+	color: white;
+	background-color: red;
+	padding: 10px;
+	border-radius: 50%;
+}
 
 .pannier_details__content___title {
 	width: 70%;

@@ -1,11 +1,18 @@
 <?php
 	include('base.php');
 	include('functions/get_art.php');
+	include('functions/add_cmd.php');
 	if (isset($_GET['d']))
 	{
 		unset($_SESSION['pannier'][$_GET['d']]);
 		$_SESSION['pannier'] = array_values($_SESSION['pannier']);
 		header('Location: pannier.php');
+	}
+	if ($_POST)
+	{
+		add_cmd($_SESSION['logged'], $_SESSION['pannier']);
+		unset($_SESSION['pannier']);
+		header('Location: pannier.php?success=Votre commande a été validé.');
 	}
 ?> 
 <!doctype html>
@@ -63,12 +70,20 @@
 						if ($_SESSION['logged'] && ($j == 1))
 						{
 					?>
-					<button class="pannier_details__content___table____btnvalid">Valider</button>
+					<form method="post" action="pannier.php">
+						<input type="hidden" name="cmd">
+						<button type="submit" class="pannier_details__content___table____btnvalid">Valider</button>
+					</form>
 					<?php
+						}
+						else
+						{
+							echo "<p style=\"text-align: right; color: red;\">Vous devez être connecté et ajouter des articles pour commander.</p>";
 						}
 					?>
 				</div>
 			</div>
 		</div>
-	</div></body>
+	</div>
+</body>
 </html>

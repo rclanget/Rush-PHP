@@ -32,13 +32,61 @@
 						foreach ($categories as $categorie)
 						{
 							$tab_cat[$j++] = $categorie;
+							if (get_arts_byid($categorie[0]))
+							{
 						?>
-							<div class="vtff"><input name="<?php echo $categorie[1]; ?>" value="<?php echo $categorie[0]; ?>" type="checkbox"><label><?php echo $categorie[1]; ?></label></div>
+							<div class="vtff"><a href="products.php?c=<?php echo $categorie[0]; ?>"><?php echo $categorie[1]; ?></a></div>
 						<?php
+							}
 						}
 						?>
 				</div>
 			</div>
+			<?php
+				if ($_GET && $_GET['c'])
+				{
+			?>
+			<div class="results_products">
+				<?php
+					if ($articles = get_arts_byid($_GET['c'])) {
+				?>
+				<section class="results_products__group">
+					<h3><?php $tabtyp = get_types($_GET['c']); echo $tabtyp[0][0]; ?></h3>
+					<?php
+						foreach ($articles as $article)
+						{ ?>
+							<article class="results_products__group___elem">
+								<a href="details.php?p=<?php echo $article[0]; ?>">
+								<img src="<?php echo $article[4]; ?>">
+								<div class="results_products__group___elem____infos">
+									<h4><?php echo $article[1]; ?></h4>
+									<p><?php echo $article[2]; ?></p>
+								</div>
+								</a>
+								<div class="results_products__group___elem____price">
+									<p><?php echo $article[3] ?> €</p>
+									<div class="results_products__group___elem____price____options">
+										<a href="#">Options</a>
+									</div>
+								</div>
+								<div class="results_products__group___elem____add">
+									<!-- <div class="results_products__group___elem____add_____confirmbtn"> -->
+										<a href="products.php?p=<?php echo $article[0]; ?>&b=1">ADD TO PANNIER</a>
+									<!-- </div> -->
+								</div>
+							</article>
+					<?php }
+					?>
+				</section>
+				<?php
+					}
+				?>
+			</div>
+			<?php
+				}
+				else
+				{
+			?>
 			<div class="results_products">
 				<?php
 					$j = 0;
@@ -79,6 +127,9 @@
 				}
 				?>
 			</div>
+			<?php
+				}
+			?>
 		</div>
 	</section>
 	<?php include('footer.php'); ?>

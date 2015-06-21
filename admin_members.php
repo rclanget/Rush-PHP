@@ -1,10 +1,17 @@
 <?php
 	include('base.php');
+	include('functions/get_user.php');
+	include('functions/get_users.php');
 	if ($_SESSION['admin'] != 1)
-		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');
+		header('Location: index.php?error=Vous ne disposez pas des droits pour accéder à cette page.');	
+	// if ($_GET['d'])
+	// {
+	// 	del_art($_GET['d']);
+	// 	header('Location: admin.php');
+	// }
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="fr"> 
 <head>
 	<meta charset="utf-8">
 	<title>Titre de la page</title>
@@ -32,18 +39,25 @@
 							<th>Membre ID</th>
 							<th>Nom</th>
 							<th>Prenom</th>
-							<th>Adresse Mail</th>
+							<th>Pseudo</th>
 							<th>Admin</th>
 							<th>Supprimer</th>
 						</tr>
+						<?php 
+							$users = get_users(); 
+							foreach ($users as $user) {
+						?>
 						<tr>
-							<td>#01</td>
-							<td>Charles</td>
-							<td>Junior</td>
-							<td>charles.junior@gmail.com</td>
-							<td><button class="admin_details__content___table____btnadmin">1</button></td>
+							<td><?php echo $user[0]; ?></td>
+							<td><?php echo $user[2]; ?></td>
+							<td><?php echo $user[3]; ?></td>
+							<td><?php echo $user[4]; ?></td>
+							<td><button class="admin_details__content___table____btnadmin" style="<?php if ($user[1]) { echo "background-color: green;";} ?>"><?php echo $user[1]; ?></button></td>
 							<td><button class="pannier_details__content___table____btnsuppr">X</button></td>
 						</tr>
+						<?php
+							}
+						?>
 					</table>
 				</div>
 			</div>
